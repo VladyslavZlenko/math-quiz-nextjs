@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "drawflow/dist/drawflow.min.css";
 
 :root {
   --background: #ffffff;
@@ -12,15 +13,38 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#drawflow {
+  background-size: 20px 20px;
+  background-image: linear-gradient(to right, rgba(220, 220, 220, 1) 1px, transparent 1px), linear-gradient(to bottom, rgba(220, 220, 220, 1) 1px, transparent 1px);
+}
+
+#drawflow .node {
+  width: 150px;
+  text-align: center;
+}
+
+#drawflow .node.selected {
+  background: #da2bef;
+}
+
+#drawflow .drawflow-delete {
+  width: 30px;
+  height: 30px;
+  background: #ff0000;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  cursor: pointer;
+  border: none;
+}
+
+#drawflow .main-path.selected {
+  stroke: #da2bef;
 }
